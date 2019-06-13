@@ -8,15 +8,15 @@
 
 MATLAB_VERSION = R2016b
 
-include(../../common/common_qt/sys_common.pri)
+include($${PWD}/../../common/common_qt/sys_common.pri)
 message("!!! matlab_matrix_common.pri CODENAME=$$CODENAME")
 
 #TEMPLATE = app
 #TARGET = .
 
 
-LIBS += -L../../../contrib/matlab/sys/glnxa64/
-INCLUDEPATH += ../../../contrib/matlab/include
+LIBS += -L$${PWD}/../../../sys/$$CODENAME/lib
+INCLUDEPATH += $${PWD}/../../../include
 
 message("R2016b is used")
 LIBS += -lmx
@@ -48,4 +48,5 @@ LIBS += -lcrypto
 QT -= core
 QT -= gui
 
-message("!!! matlab_matrix_common.pri including libs")
+OTHER_FILES += \
+    $${PWD}/../../../scripts/create_new_system.sh
