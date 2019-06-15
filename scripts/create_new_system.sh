@@ -8,12 +8,23 @@
 #
 
 
-libsSrcDir=/opt/matlab/r2016b/bin/glnxa64
+#libsSrcDir=/opt/matlab/r2016b/bin/glnxa64
+#boostLibVersion=1.56.0
+#libIcuVersion=56
+#libTbbVersion=2
+#libUnwindVersion=8
+#libSslVersion=1
+#libHdf5Version=8
+
+
+libsSrcDir=/afs/ifh.de/SL/6/x86_64/opt/matlab/R2016b/bin/glnxa64
 boostLibVersion=1.56.0
 libIcuVersion=56
 libTbbVersion=2
 libUnwindVersion=8
 libSslVersion=1
+libHdf5Version=8
+
 
 lsbCodeName=`lsb_release -c | cut -f 2`
 scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -23,6 +34,10 @@ libFinalDir=${scriptDir}/../sys/$lsbCodeName/lib
 
 echo "libFinalDir="${libFinalDir}
 
+# todo: make this better way
+rm -rf ${libFinalDir}
+
+# create final directory
 mkdir -p ${libFinalDir}
 #exit 0
 
@@ -32,6 +47,11 @@ cp ${libsSrcDir}/libmwresource_core.so      ${libFinalDir}/.
 cp ${libsSrcDir}/libmwi18n.so               ${libFinalDir}/.
 cp ${libsSrcDir}/libmwfl.so                 ${libFinalDir}/.
 cp ${libsSrcDir}/libmwcpp11compat.so        ${libFinalDir}/.
+cp ${libsSrcDir}/libeng.so                  ${libFinalDir}/.
+cp ${libsSrcDir}/libmat.so                  ${libFinalDir}/.
+
+cp ${libsSrcDir}/libhdf5_hl.so.${libHdf5Version}                 ${libFinalDir}/.
+cp ${libsSrcDir}/libhdf5.so.${libHdf5Version}                    ${libFinalDir}/.
 
 cp ${libsSrcDir}/libboost_chrono.so.${boostLibVersion}         ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_date_time.so.${boostLibVersion}      ${libFinalDir}/.
@@ -73,7 +93,13 @@ ln -s libicuuc.so.${libIcuVersion}           libicuuc.so
 ln -s libicui18n.so.${libIcuVersion}         libicui18n.so
 ln -s libicuio.so.${libIcuVersion}           libicuio.so
 
-ln -s libunwind.so.${libUnwindVersion}               libunwind.so
+ln -s libtbb.so.${libTbbVersion}                  libtbb.so
+ln -s libtbbmalloc.so.${libTbbVersion}            libtbbmalloc.so
 
 ln -s libssl.so.${libSslVersion}                  libssl.so
 ln -s libcrypto.so.${libSslVersion}               libcrypto.so
+
+ln -s libhdf5_hl.so.${libHdf5Version}                 libhdf5_hl.so
+ln -s libhdf5.so.${libHdf5Version}                    libhdf5.so
+
+ln -s libunwind.so.${libUnwindVersion}               libunwind.so

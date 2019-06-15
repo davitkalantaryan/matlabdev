@@ -11,8 +11,6 @@
 #QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-function
 #QMAKE_CXXFLAGS_WARN_ON -= -Wunused-function
 
-message("!!! sys_common.pri: SYSTEM_PATH=$$SYSTEM_PATH")
-
 optionsLib = $$find(TEMPLATE, "lib")
 
 count(optionsLib, 1){
@@ -37,3 +35,5 @@ win32{
 } else:unix {
     CODENAME = $$system(lsb_release -c | cut -f 2)
 }
+
+message("!!! sys_common.pri: CODENAME=$$CODENAME")
