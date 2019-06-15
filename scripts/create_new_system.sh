@@ -55,6 +55,7 @@ cp ${libsSrcDir}/libmwfl.so                 ${libFinalDir}/.
 cp ${libsSrcDir}/libmwcpp11compat.so        ${libFinalDir}/.
 cp ${libsSrcDir}/libeng.so                  ${libFinalDir}/.
 cp ${libsSrcDir}/libmat.so                  ${libFinalDir}/.
+cp ${libsSrcDir}/libmwMATLAB_res.so         ${libFinalDir}/.
 
 cp ${libsSrcDir}/libhdf5_hl.so.${libHdf5Version}                 ${libFinalDir}/.
 cp ${libsSrcDir}/libhdf5.so.${libHdf5Version}                    ${libFinalDir}/.
@@ -68,6 +69,7 @@ cp ${libsSrcDir}/libboost_signals.so.${boostLibVersion}        ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_system.so.${boostLibVersion}         ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_thread.so.${boostLibVersion}         ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_serialization.so.${boostLibVersion}  ${libFinalDir}/.
+cp ${libsSrcDir}/libboost_log_setup.so.${boostLibVersion}      ${libFinalDir}/.
 
 cp ${libsSrcDir}/libicudata.so.${libIcuVersion}              ${libFinalDir}/.
 cp ${libsSrcDir}/libicuuc.so.${libIcuVersion}                ${libFinalDir}/.
@@ -93,6 +95,7 @@ ln -s libboost_signals.so.${boostLibVersion}        libboost_signals.so
 ln -s libboost_system.so.${boostLibVersion}         libboost_system.so
 ln -s libboost_thread.so.${boostLibVersion}         libboost_thread.so
 ln -s libboost_serialization.so.${boostLibVersion}  libboost_serialization.so
+ln -s libboost_log_setup.so.${boostLibVersion}      libboost_log_setup.so
 
 ln -s libicudata.so.${libIcuVersion}         libicudata.so
 ln -s libicuuc.so.${libIcuVersion}           libicuuc.so
