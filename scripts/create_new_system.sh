@@ -16,21 +16,21 @@
 #libSslVersion=1
 #libHdf5Version=8
 
-#libsSrcDir=/afs/ifh.de/SL/6/x86_64/opt/matlab/R2016b/bin/glnxa64
-#boostLibVersion=1.56.0
-#libIcuVersion=56
-#libTbbVersion=2
-#libUnwindVersion=8
-#libSslVersion=1
-#libHdf5Version=8
-
-libsSrcDir=/afs/ifh.de/SL/6/x86_64/opt/matlab/R2012b/bin/glnxa64
-boostLibVersion=1.44.0
-libIcuVersion=44
+libsSrcDir=/afs/ifh.de/SL/6/x86_64/opt/matlab/R2016b/bin/glnxa64
+boostLibVersion=1.56.0
+libIcuVersion=56
 libTbbVersion=2
 libUnwindVersion=8
 libSslVersion=1
-libHdf5Version=6
+libHdf5Version=8
+
+#libsSrcDir=/afs/ifh.de/SL/6/x86_64/opt/matlab/R2012b/bin/glnxa64
+#boostLibVersion=1.44.0
+#libIcuVersion=44
+#libTbbVersion=2
+#libUnwindVersion=8
+#libSslVersion=1
+#libHdf5Version=6
 
 lsbCodeName=`lsb_release -c | cut -f 2`
 scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -55,7 +55,7 @@ cp ${libsSrcDir}/libmwfl.so                 ${libFinalDir}/.
 cp ${libsSrcDir}/libmwcpp11compat.so        ${libFinalDir}/.
 cp ${libsSrcDir}/libeng.so                  ${libFinalDir}/.
 cp ${libsSrcDir}/libmat.so                  ${libFinalDir}/.
-cp ${libsSrcDir}/libmwMATLAB_res.so         ${libFinalDir}/.
+#cp ${libsSrcDir}/libmwMATLAB_res.so         ${libFinalDir}/.
 
 cp ${libsSrcDir}/libhdf5_hl.so.${libHdf5Version}                 ${libFinalDir}/.
 cp ${libsSrcDir}/libhdf5.so.${libHdf5Version}                    ${libFinalDir}/.

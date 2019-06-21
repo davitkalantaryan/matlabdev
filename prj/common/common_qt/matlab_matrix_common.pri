@@ -24,7 +24,7 @@ LIBS += -lut
 LIBS += -lmwresource_core
 LIBS += -lmwi18n
 LIBS += -lmwfl
-LIBS += -lboost_chrono
+#LIBS += -lboost_chrono
 LIBS += -lboost_date_time
 LIBS += -lboost_filesystem
 LIBS += -lboost_log
@@ -41,8 +41,11 @@ LIBS += -ltbb
 LIBS += -ltbbmalloc
 LIBS += -lboost_serialization
 LIBS += -lunwind
-LIBS += -lssl
-LIBS += -lcrypto
+#LIBS += -lssl
+#LIBS += -lcrypto
+
+#LIBS += -lmwMATLAB_res
+#LIBS += -lboost_log_setup
 
 
 QT -= core
