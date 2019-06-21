@@ -10,7 +10,9 @@
 TARGET_EXT = mexa64
 QMAKE_EXTENSION_SHLIB = mexa64
 
-include(${PWD}/../../common/common_qt/sys_common.pri)
+include($${PWD}/sys_common.pri)
+
+message("!!!  CODENAME=$$CODENAME")
 
 #equals(CODENAME,"Santiago"){
 #    INCLUDEPATH += /products/matlab/R2010a/extern/include

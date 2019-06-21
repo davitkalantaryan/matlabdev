@@ -11,6 +11,9 @@
 #QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-function
 #QMAKE_CXXFLAGS_WARN_ON -= -Wunused-function
 
+#CONFIG += c++17
+#QMAKE_CXXFLAGS += -std=c++14
+
 optionsLib = $$find(TEMPLATE, "lib")
 
 count(optionsLib, 1){
