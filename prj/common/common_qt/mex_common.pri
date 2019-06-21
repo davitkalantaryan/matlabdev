@@ -10,14 +10,16 @@
 TARGET_EXT = mexa64
 QMAKE_EXTENSION_SHLIB = mexa64
 
-include(../../common/common_qt/sys_common.pri)
+include(${PWD}/../../common/common_qt/sys_common.pri)
 
-equals(CODENAME,"Santiago"){
-    INCLUDEPATH += /products/matlab/R2010a/extern/include
-}else{
-    equals(CODENAME,"trusty"){
-        INCLUDEPATH += /usr/local/MATLAB/R2016a/extern/include
-}}
+#equals(CODENAME,"Santiago"){
+#    INCLUDEPATH += /products/matlab/R2010a/extern/include
+#}else{
+#    equals(CODENAME,"trusty"){
+#        INCLUDEPATH += /usr/local/MATLAB/R2016a/extern/include
+#}}
+
+INCLUDEPATH += $${PWD}/../../../include
 
 TEMPLATE = lib
 QMAKE_EXTRA_TARGETS += copy_mex_file
