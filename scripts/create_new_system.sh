@@ -60,7 +60,7 @@ cp ${libsSrcDir}/libmwMATLAB_res.so         ${libFinalDir}/.
 cp ${libsSrcDir}/libhdf5_hl.so.${libHdf5Version}                 ${libFinalDir}/.
 cp ${libsSrcDir}/libhdf5.so.${libHdf5Version}                    ${libFinalDir}/.
 
-#cp ${libsSrcDir}/libboost_chrono.so.${boostLibVersion}         ${libFinalDir}/.
+cp ${libsSrcDir}/libboost_chrono.so.${boostLibVersion}         ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_date_time.so.${boostLibVersion}      ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_filesystem.so.${boostLibVersion}     ${libFinalDir}/.
 cp ${libsSrcDir}/libboost_log.so.${boostLibVersion}            ${libFinalDir}/.
@@ -81,8 +81,8 @@ cp ${libsSrcDir}/libtbbmalloc.so.${libTbbVersion}            ${libFinalDir}/.
 
 cp ${libsSrcDir}/libunwind.so.${libUnwindVersion}               ${libFinalDir}/.
 
-#cp ${libsSrcDir}/libssl.so.${libSslVersion}                  ${libFinalDir}/.
-#cp ${libsSrcDir}/libcrypto.so.${libSslVersion}               ${libFinalDir}/.
+cp ${libsSrcDir}/libssl.so.${libSslVersion}                  ${libFinalDir}/.
+cp ${libsSrcDir}/libcrypto.so.${libSslVersion}               ${libFinalDir}/.
 
 cd ${libFinalDir}
 
