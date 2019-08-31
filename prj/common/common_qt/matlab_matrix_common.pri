@@ -19,37 +19,41 @@ LIBS += -L$${PWD}/../../../sys/$$CODENAME/lib
 INCLUDEPATH += $${PWD}/../../../include
 
 message("R2016b is used")
-LIBS += -lmx
-LIBS += -lut
-LIBS += -lmwresource_core
-LIBS += -lmwi18n
-LIBS += -lmwfl
-LIBS += -lboost_chrono
-LIBS += -lboost_date_time
-LIBS += -lboost_filesystem
-LIBS += -lboost_log
-LIBS += -lboost_regex
-LIBS += -lboost_signals
-LIBS += -lboost_system
-LIBS += -lboost_thread
-LIBS += -lmwcpp11compat
-LIBS += -licudata
-#LIBS += $${PWD}/../../../sys/Nitrogen/lib/libicudata.so
-LIBS += -licuuc
-LIBS += -licui18n
-LIBS += -licuio
-LIBS += -ltbb
-LIBS += -ltbbmalloc
-LIBS += -lboost_serialization
-LIBS += -lunwind
-LIBS += -lssl
-LIBS += -lcrypto
 
-#LIBS += -lmwMATLAB_res
-#LIBS += -lboost_log_setup
+win32{
+    LIBS += -llibmx
+} else {
+    LIBS += -lmx
+    LIBS += -lut
+    LIBS += -lmwresource_core
+    LIBS += -lmwi18n
+    LIBS += -lmwfl
+    LIBS += -lboost_chrono
+    LIBS += -lboost_date_time
+    LIBS += -lboost_filesystem
+    LIBS += -lboost_log
+    LIBS += -lboost_regex
+    LIBS += -lboost_signals
+    LIBS += -lboost_system
+    LIBS += -lboost_thread
+    LIBS += -lmwcpp11compat
+    LIBS += -licudata
+    #LIBS += $${PWD}/../../../sys/Nitrogen/lib/libicudata.so
+    LIBS += -licuuc
+    LIBS += -licui18n
+    LIBS += -licuio
+    LIBS += -ltbb
+    LIBS += -ltbbmalloc
+    LIBS += -lboost_serialization
+    LIBS += -lunwind
+    LIBS += -lssl
+    LIBS += -lcrypto
 
-####LIBS +=  -lmx -lmat -lm -leng
+    #LIBS += -lmwMATLAB_res
+    #LIBS += -lboost_log_setup
 
+    ####LIBS +=  -lmx -lmat -lm -leng
+}
 
 QT -= core
 QT -= gui
