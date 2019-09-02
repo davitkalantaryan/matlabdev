@@ -6,19 +6,14 @@
 # for PITZ
 #
 
-MATLAB_VERSION = R2016b
 
-include($${PWD}/../../common/common_qt/sys_common.pri)
+include($${PWD}/../../common/common_qt/matlab_matrix_without_libs_common.pri)
 message("!!! matlab_matrix_common.pri CODENAME=$$CODENAME")
 
 #TEMPLATE = app
 #TARGET = .
 
-
 LIBS += -L$${PWD}/../../../sys/$$CODENAME/lib
-INCLUDEPATH += $${PWD}/../../../include
-
-message("R2016b is used")
 
 win32{
     LIBS += -llibmx
@@ -55,8 +50,6 @@ win32{
     ####LIBS +=  -lmx -lmat -lm -leng
 }
 
-QT -= core
-QT -= gui
 
 OTHER_FILES += \
     $${PWD}/../../../scripts/create_new_system.sh
