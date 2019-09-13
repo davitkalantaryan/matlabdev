@@ -1,5 +1,5 @@
 #
-# File matlab_matrix_common.pro
+# File matlab_matrix_without_lib_common.pro
 # File created : 19 Apr 2017
 # Created by : Davit Kalantaryan (davit.kalantaryan@desy.de)
 # This file can be used to produce Makefile for daqadcreceiver application
@@ -8,8 +8,8 @@
 
 MATLAB_VERSION = R2016b
 
-include($${PWD}/../../common/common_qt/sys_common.pri)
-message("!!! matlab_matrix_common.pri CODENAME=$$CODENAME")
+include ( $${PWD}/../../common/common_qt/sys_common.pri )
+message("!!! matlab_matrix_without_lib_common.pri CODENAME=$$CODENAME")
 
 INCLUDEPATH += $${PWD}/../../../include
 
