@@ -16,27 +16,47 @@
 
 optionsLib = $$find(TEMPLATE, "lib")
 
+equals($$PRJ_PWD,"") {
+    PRJ_PWD = ../../..
+}
+
 count(optionsLib, 1){
-equals(TARGET_EXT,"mex*"){
-    TARGET_PATH=mbin
-    message("Matlab mex file creation")
-}else{
     TARGET_PATH=lib
     message("Shared library creation")
-}
 }else{
     TARGET_PATH=bin
     message("Binary file creation")
 }
 
 
-win32{
-    contains(QMAKE_TARGET.arch, x86_64): CODENAME = win64
-    else:   CODENAME = win32
-} else:macx {
+win32 {
+    contains(QMAKE_TARGET.arch, x86_64) {
+        ## Windows x64 (64bit) specific build here
+        CODENAME = win64
+        SYSTEM_PATH = sys/win64
+
+    } else {
+        ## Windows x86 (32bit) specific build here
+        CODENAME = win32
+        SYSTEM_PATH = sys/win32
+
+    }
+
+} else:mac {
     CODENAME = mac
-} else:unix {
+    SYSTEM_PATH = sys/mac
+} else:android {
+    CODENAME = android
+    SYSTEM_PATH = sys/android
+} else {
+    DEFINES += LINUX
     CODENAME = $$system(lsb_release -c | cut -f 2)
+    SYSTEM_PATH = sys/$$CODENAME
 }
 
-message("!!! sys_common.pri: CODENAME=$$CODENAME")
+
+message("!!! sys_common.pri: SYSTEM_PATH=$$SYSTEM_PATH")
+
+# Debug:DESTDIR = debug1
+DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/$${TARGET_PATH}
+OBJECTS_DIR = $${PRJ_PWD}/$${SYSTEM_PATH}/.objects
