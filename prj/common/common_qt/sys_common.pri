@@ -14,20 +14,19 @@
 #CONFIG += c++17
 #QMAKE_CXXFLAGS += -std=c++14
 
-optionsLib = $$find(TEMPLATE, "lib")
-
-equals($$PRJ_PWD,"") {
-    PRJ_PWD = ../../..
-}
-
-count(optionsLib, 1){
+contains( TEMPLATE, lib ) {
     TARGET_PATH=lib
     message("Shared library creation")
-}else{
+} else {
     TARGET_PATH=bin
     message("Binary file creation")
 }
 
+PRJ_PWD_TMP = $$PRJ_PWD
+
+isEmpty(PRJ_PWD_TMP) {
+    PRJ_PWD = ../../..
+}
 
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
