@@ -14,29 +14,48 @@
 #CONFIG += c++17
 #QMAKE_CXXFLAGS += -std=c++14
 
-optionsLib = $$find(TEMPLATE, "lib")
-
-count(optionsLib, 1){
-equals(TARGET_EXT,"mex*"){
-    TARGET_PATH=mbin
-    message("Matlab mex file creation")
-}else{
+contains( TEMPLATE, lib ) {
     TARGET_PATH=lib
     message("Shared library creation")
-}
-}else{
+} else {
     TARGET_PATH=bin
     message("Binary file creation")
 }
 
+PRJ_PWD_TMP = $$PRJ_PWD
 
-win32{
-    contains(QMAKE_TARGET.arch, x86_64): CODENAME = win64
-    else:   CODENAME = win32
-} else:macx {
-    CODENAME = mac
-} else:unix {
-    CODENAME = $$system(lsb_release -c | cut -f 2)
+isEmpty(PRJ_PWD_TMP) {
+    PRJ_PWD = ../../..
 }
 
-message("!!! sys_common.pri: CODENAME=$$CODENAME")
+win32 {
+    contains(QMAKE_TARGET.arch, x86_64) {
+        ## Windows x64 (64bit) specific build here
+        CODENAME = win64
+        SYSTEM_PATH = sys/win64
+
+    } else {
+        ## Windows x86 (32bit) specific build here
+        CODENAME = win32
+        SYSTEM_PATH = sys/win32
+
+    }
+
+} else:mac {
+    CODENAME = mac
+    SYSTEM_PATH = sys/mac
+} else:android {
+    CODENAME = android
+    SYSTEM_PATH = sys/android
+} else {
+    DEFINES += LINUX
+    CODENAME = $$system(lsb_release -c | cut -f 2)
+    SYSTEM_PATH = sys/$$CODENAME
+}
+
+
+message("!!! sys_common.pri: SYSTEM_PATH=$$SYSTEM_PATH")
+
+# Debug:DESTDIR = debug1
+DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/$${TARGET_PATH}
+OBJECTS_DIR = $${PRJ_PWD}/$${SYSTEM_PATH}/.objects

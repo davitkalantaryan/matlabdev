@@ -23,7 +23,7 @@ win32{
     LIBS += -lmwresource_core
     LIBS += -lmwi18n
     LIBS += -lmwfl
-    LIBS += -lboost_chrono
+    #LIBS += -lboost_chrono
     LIBS += -lboost_date_time
     LIBS += -lboost_filesystem
     LIBS += -lboost_log
