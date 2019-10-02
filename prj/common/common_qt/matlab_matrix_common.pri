@@ -44,7 +44,7 @@ win32{
     LIBS += -lssl
     LIBS += -lcrypto
 
-    #LIBS += -lmwMATLAB_res
+    LIBS += -lmwMATLAB_res
     #LIBS += -lboost_log_setup
 
     ####LIBS +=  -lmx -lmat -lm -leng
