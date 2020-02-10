@@ -14,12 +14,12 @@ win32{
 
 } else {
 
-    QMAKE_LFLAGS = -Wl,-E -pie -shared
-    TARGET_EXT = mexa64
+    #QMAKE_LFLAGS = -Wl,-E -pie -shared
+    #TARGET_EXT = mexa64
 
 }
 
-DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
+#DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
 
 message("!!! matlab_matrix_without_lib_common.pri CODENAME=$$CODENAME")
 
