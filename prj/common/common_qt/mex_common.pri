@@ -7,26 +7,46 @@
 #
 
 
-TARGET_EXT = mexa64
-QMAKE_EXTENSION_SHLIB = mexa64
+win32{
+
+    TEMPLATE = lib
+
+    contains(QMAKE_TARGET.arch, x86_64) {
+        message("x86_64 build")
+        ## Windows x64 (64bit) specific build here
+
+        TARGET_EXT = mexw64
+        QMAKE_EXTENSION_SHLIB = mexw64
+
+    } else {
+        message("x86 build")
+        ## Windows x86 (32bit) specific build here
+        TARGET_EXT = mexw32
+        QMAKE_EXTENSION_SHLIB = mexw32
+    }
+
+} else {
+
+    QMAKE_LFLAGS = -Wl,-E -pie -shared
+    TARGET_EXT = mexa64
+    QMAKE_EXTENSION_SHLIB = mexa64
+
+}
 
 include($${PWD}/sys_common.pri)
 
 message("!!!  CODENAME=$$CODENAME")
 
-#equals(CODENAME,"Santiago"){
-#    INCLUDEPATH += /products/matlab/R2010a/extern/include
-#}else{
-#    equals(CODENAME,"trusty"){
-#        INCLUDEPATH += /usr/local/MATLAB/R2016a/extern/include
-#}}
+DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
 
 INCLUDEPATH += $${PWD}/../../../include
 
-TEMPLATE = lib
-QMAKE_EXTRA_TARGETS += copy_mex_file
-#copy_mex_file.commands = "cp "
-POST_TARGETDEPS += copy_mex_file
 
-QT -= core
+#QMAKE_EXTRA_TARGETS += copy_mex_file
+#copy_mex_file.commands = "cp "
+#POST_TARGETDEPS += copy_mex_file
+
 QT -= gui
+QT -= core
+QT -= widgets
+CONFIG -= qt
