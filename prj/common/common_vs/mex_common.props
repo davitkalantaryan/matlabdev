@@ -2,21 +2,24 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <Import Project="$(ProjectDir)..\..\..\prj\common\common_vs\$(PlatformTarget)\sys.props" />
   <PropertyGroup>
-    <OutDir>..\..\..\..\sys\$(TargetFolderBase)\mbin\</OutDir>
-    <IntDir>..\..\..\sys\$(TargetFolderBase)\.objects\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\mbin\</OutDir>
+    <IntDir>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\.objects\$(ProjectName)\</IntDir>
     <TargetExt>.$(MexExtension)</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
       <ImportLibrary>
       </ImportLibrary>
-      <AdditionalLibraryDirectories>..\..\..\contrib\matlab\sys\$(TargetFolderBase)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\lib;$(ProjectDir)..\..\..\contrib\matlab\sys\win_$(PlatformTarget)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libmx.lib;libmex.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ModuleDefinitionFile>..\..\..\src\modulefiles\modulemex1.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MatlabIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MatlabIncludeDir);$(ProjectDir)..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DLL_EXPORT_SYM=__declspec(dllexport);_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />
