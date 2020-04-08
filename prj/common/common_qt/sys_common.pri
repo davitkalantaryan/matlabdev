@@ -25,7 +25,8 @@ contains( TEMPLATE, lib ) {
 PRJ_PWD_TMP = $$PRJ_PWD
 
 isEmpty(PRJ_PWD_TMP) {
-    PRJ_PWD = ../../..
+	#PRJ_PWD = ../../..
+	PRJ_PWD = $${PWD}/../../..
 }
 
 win32 {

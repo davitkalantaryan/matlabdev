@@ -1,0 +1,5 @@
+
+build-*
+sys/*/.objects
+sys/*/mbin
+examples/*.pro.user*

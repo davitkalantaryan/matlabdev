@@ -7,6 +7,8 @@
 #
 
 
+include($${PWD}/sys_common.pri)
+
 win32{
 
     TEMPLATE = lib
@@ -21,19 +23,16 @@ win32{
     } else {
         message("x86 build")
         ## Windows x86 (32bit) specific build here
-        TARGET_EXT = mexw32
-        QMAKE_EXTENSION_SHLIB = mexw32
+	TARGET_EXT = mexw32
+	QMAKE_EXTENSION_SHLIB = mexw32
     }
 
 } else {
-
-    QMAKE_LFLAGS = -Wl,-E -pie -shared
-    TARGET_EXT = mexa64
-    QMAKE_EXTENSION_SHLIB = mexa64
-
+	QMAKE_LFLAGS = -Wl,-E -pie -shared
+	TARGET_EXT = mexa64
+	QMAKE_EXTENSION_SHLIB = mexa64
+	#TARGET = $${TARGET}.mexa64
 }
-
-include($${PWD}/sys_common.pri)
 
 message("!!!  CODENAME=$$CODENAME")
 
@@ -41,10 +40,6 @@ DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
 
 INCLUDEPATH += $${PWD}/../../../include
 
-
-#QMAKE_EXTRA_TARGETS += copy_mex_file
-#copy_mex_file.commands = "cp "
-#POST_TARGETDEPS += copy_mex_file
 
 QT -= gui
 QT -= core
