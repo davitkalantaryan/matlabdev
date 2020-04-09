@@ -17,15 +17,10 @@ include $(mkfile_dir)/../prj/common/common_mkfl/umex_common.mak
 OBJECTS = \
 	$(OBJECT_FILES_DIR)/mex_entry_example.o
 
-default: $(TARGET_NAME)
+default: $(PROJECT_NAME)
 
 
-$(OBJECT_FILES_DIR)/%.o: $(SOURCES_BASE_DIR)/%.cpp
-	mkdir -p $(@D)
-	$(CPP) $(CPPPARAMS) -o $@ -c $<
-
-
-$(TARGET_NAME): $(OBJECTS)
+$(PROJECT_NAME): $(OBJECTS)
 	mkdir -p $(TARGET_DIR)
 	$(LINK) $(OBJECTS) $(LIBS) $(LFLAGS) -o $(TARGET_FILE_PATH)
 
