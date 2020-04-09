@@ -1,5 +1,5 @@
 
-PROJECT_NAME		=  qt_example2
+PROJECT_NAME		=  umf_example
 mkfile_path			:= $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir			:= $(shell dirname $(mkfile_path))
 SOURCES_BASE_DIR	=  $(mkfile_dir)

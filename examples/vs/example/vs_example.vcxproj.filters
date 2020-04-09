@@ -32,5 +32,14 @@
     <None Include="..\..\winmake_example.Makefile">
       <Filter>aall</Filter>
     </None>
+    <None Include="..\..\umake_example.Makefile">
+      <Filter>aall</Filter>
+    </None>
+    <None Include="..\..\..\prj\common\common_mkfl\wmex_common.mak">
+      <Filter>aall</Filter>
+    </None>
+    <None Include="..\..\..\prj\common\common_mkfl\umex_common.mak">
+      <Filter>aall</Filter>
+    </None>
   </ItemGroup>
 </Project>
