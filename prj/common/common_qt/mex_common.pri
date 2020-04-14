@@ -32,6 +32,11 @@ win32{
 	TARGET_EXT = mexa64
 	QMAKE_EXTENSION_SHLIB = mexa64
 	#TARGET = $${TARGET}.mexa64
+	GCCPATH = $$system(which gcc)
+	message("!!!!!!!!!!! GCCPATH=$$GCCPATH")
+	# QMAKE_CXXFLAGS += -std=c++14 # in the case of DOOCS
+	#TARGET_NAME = $$TARGET_NAME.mexa64
+	TARGET = $${TARGET}.mexa64
 }
 
 message("!!!  CODENAME=$$CODENAME")
