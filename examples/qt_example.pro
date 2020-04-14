@@ -16,6 +16,6 @@ SOURCES +=	\
 # We are done
 
 OTHER_FILES	+=	\
-	$${PWD}/umake_example.Makefile							\
-	$${PWD}/../prj/common/common_mkfl/umex_common.mak		\
+	$${PWD}/Makefile.uexample								\
+	$${PWD}/../prj/common/common_mkfl/Makefile.umex_common	\
 	$${PWD}/../.gitignore

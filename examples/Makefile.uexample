@@ -3,7 +3,7 @@ PROJECT_NAME		=  umf_example
 mkfile_path			:= $(abspath $(lastword $(MAKEFILE_LIST)))
 mkfile_dir			:= $(shell dirname $(mkfile_path))
 SOURCES_BASE_DIR	=  $(mkfile_dir)
-include $(mkfile_dir)/../prj/common/common_mkfl/umex_common.mak
+include $(mkfile_dir)/../prj/common/common_mkfl/Makefile.umex_common
 
 
 # !!! you can redefine variables declared in the file '$(mkfile_dir)/../prj/common/common_mkfl/umex_common.mak'
