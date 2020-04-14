@@ -6,3 +6,4 @@ examples/*.pro.user*
 *.obj
 .vs
 *.vcxproj.user
+docs/~*

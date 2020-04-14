@@ -8,6 +8,7 @@ TARGET_DIR			=   $(include_mkfile_dir)/../../../sys/$(LSB_RELEASE)/mbin
 TARGET_NAME			=   $(PROJECT_NAME)
 OUTPUT_NAME			=   $(TARGET_NAME).$(TARGET_EXTENSION)
 TARGET_FILE_PATH	=   $(TARGET_DIR)/$(OUTPUT_NAME)
+CC					=   gcc
 CPP					=   g++
 LINK				=   g++
 LFLAGS				+=  -Wl,-E -pie -shared
@@ -18,3 +19,11 @@ CPPPARAMS			+=  -I$(include_mkfile_dir)/../../../include -fPIC
 $(OBJECT_FILES_DIR)/%.o: $(SOURCES_BASE_DIR)/%.cpp
 	mkdir -p $(@D)
 	$(CPP) $(CPPPARAMS) -o $@ -c $<
+
+$(OBJECT_FILES_DIR)/%.o: $(SOURCES_BASE_DIR)/%.cc
+	mkdir -p $(@D)
+	$(CPP) $(CPPPARAMS) -o $@ -c $<
+
+$(OBJECT_FILES_DIR)/%.o: $(SOURCES_BASE_DIR)/%.c
+	mkdir -p $(@D)
+	$(CC) $(CPPPARAMS) -o $@ -c $<
