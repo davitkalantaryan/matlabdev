@@ -7,3 +7,7 @@ examples/*.pro.user*
 .vs
 *.vcxproj.user
 docs/~*
+.object*
+*.mexw64
+*.mexw32
+*.mexa64

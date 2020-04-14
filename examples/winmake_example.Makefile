@@ -13,5 +13,5 @@ MatDevRootDir		= $(MAKEDIR)\..
 Objects				=	\
 	mex_entry_example.obj
 
-include ..\prj\common\common_mkfl\wmex_common.mak
+include ..\prj\common\common_mkfl\wmex_common.Makefile
 	
