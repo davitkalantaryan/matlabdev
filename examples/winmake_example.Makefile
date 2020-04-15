@@ -11,7 +11,8 @@ CallerMakeFilePath	= $(MAKEDIR)\winmake_example.Makefile
 MatDevRootDir		= $(MAKEDIR)\..
 
 Objects				=	\
-	mex_entry_example.obj
+	mex_entry_example.obj	\
+	src2/mex_second_source.obj
 
 include ..\prj\common\common_mkfl\wmex_common.Makefile
 	

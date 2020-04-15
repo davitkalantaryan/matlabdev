@@ -131,10 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\.gitignore" />
-    <None Include="..\..\..\prj\common\common_mkfl\umex_common.mak" />
-    <None Include="..\..\..\prj\common\common_mkfl\wmex_common.mak" />
+    <None Include="..\..\..\prj\common\common_mkfl\wmex_common.Makefile" />
     <None Include="..\..\..\README.md" />
-    <None Include="..\..\umake_example.Makefile" />
     <None Include="..\..\winmake_example.Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

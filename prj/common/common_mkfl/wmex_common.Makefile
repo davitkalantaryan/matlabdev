@@ -67,6 +67,7 @@ includeBuildRaw: $(Objects)
 	@cd $(ObjectsDir)
 	$(LINKER) $(LFLAGS) $(Objects) $(LIBS) /DLL $(LIBPATHS) /SUBSYSTEM:CONSOLE libmx.lib libmex.lib /OUT:$(TargetName).$(TargetExtension)
 	@cd $(MAKEDIR)
+	@::echo !!!!!!!  $(ObjectsDir)\$(TargetName).$(TargetExtension)
 	@copy /y $(ObjectsDir)\$(TargetName).$(TargetExtension) .
 
 clean:
@@ -92,7 +93,7 @@ includeBuild:
 		if  "$(CallerMakeFilePath)"=="" (
 			if "$(Objects)"=="" (
 				echo !!!!!!!!! error !!!!!!!
-				echo Before calling makeInclude 'wmex_common.mak' ^
+				echo Before calling makeInclude 'wmex_common.Makefile' ^
 					you should specify variable 'CallerMakeFilePath' or
 				echo variable with name Objects, specifying objects will be build here
 				echo The caller Makefile can be specified like this  [CallerMakeFilePath = \$(MAKEDIR)/makeFileName]
