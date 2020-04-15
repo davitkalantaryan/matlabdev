@@ -12,13 +12,13 @@
     <Link>
       <ImportLibrary>
       </ImportLibrary>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\lib;$(ProjectDir)..\..\..\contrib\matlab\sys\win_$(PlatformTarget)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(MatlabDevRoot)\win_$(PlatformTarget)\lib;$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\lib;$(ProjectDir)..\..\..\contrib\matlab\sys\win_$(PlatformTarget)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libmx.lib;libmex.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MatlabIncludeDir);$(ProjectDir)..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MatlabDevRoot)\include;$(MatlabIncludeDir);$(ProjectDir)..\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DLL_EXPORT_SYM=__declspec(dllexport);_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
