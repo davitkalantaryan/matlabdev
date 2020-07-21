@@ -26,7 +26,7 @@ PRJ_PWD_TMP = $$PRJ_PWD
 
 isEmpty(PRJ_PWD_TMP) {
 	#PRJ_PWD = ../../..
-	PRJ_PWD = $${PWD}/../../..
+	PRJ_PWD = ../../..
 }
 
 win32 {
