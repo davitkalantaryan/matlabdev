@@ -59,4 +59,4 @@ message("!!! sys_common.pri: SYSTEM_PATH=$$SYSTEM_PATH")
 
 # Debug:DESTDIR = debug1
 DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/$${TARGET_PATH}
-OBJECTS_DIR = $${PRJ_PWD}/$${SYSTEM_PATH}/.objects
+OBJECTS_DIR = $${PRJ_PWD}/$${SYSTEM_PATH}/.objects/$${TARGET}
