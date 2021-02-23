@@ -5,6 +5,8 @@
   <PropertyGroup>
     <OutDir>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\$(Configuration)\mbin\</OutDir>
     <IntDir>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\$(Configuration)\.objects\$(ProjectName)\</IntDir>
+	<MexExtension Condition="'$(PlatformTarget)'=='x64'">mexw64</MexExtension>
+	<MexExtension Condition="'$(PlatformTarget)'=='x86'">mexw32</MexExtension>
     <TargetExt>.$(MexExtension)</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup>
