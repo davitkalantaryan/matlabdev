@@ -11,7 +11,7 @@
     <Link>
       <ImportLibrary>$(ProjectDir)..\..\..\sys\win_$(PlatformTarget)\$(Configuration)\.objects\lib\$(ProjectName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\..\sys\win_$(PlatformTarget)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libmx.lib;libmex.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmx.lib;libmex.lib</AdditionalDependencies>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>
