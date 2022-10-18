@@ -23,19 +23,16 @@ win32{
     } else {
         message("x86 build")
         ## Windows x86 (32bit) specific build here
-	TARGET_EXT = mexw32
-	QMAKE_EXTENSION_SHLIB = mexw32
+		TARGET_EXT = mexw32
+		QMAKE_EXTENSION_SHLIB = mexw32
     }
 
 } else {
 	QMAKE_LFLAGS = -Wl,-E -pie -shared
+    QMAKE_CXXFLAGS = -fPIC
+    QMAKE_CFLAGS = -fPIC
 	TARGET_EXT = mexa64
 	QMAKE_EXTENSION_SHLIB = mexa64
-	#TARGET = $${TARGET}.mexa64
-	GCCPATH = $$system(which gcc)
-	message("!!!!!!!!!!! GCCPATH=$$GCCPATH")
-	# QMAKE_CXXFLAGS += -std=c++14 # in the case of DOOCS
-	#TARGET_NAME = $$TARGET_NAME.mexa64
 	TARGET = $${TARGET}.mexa64
 }
 
