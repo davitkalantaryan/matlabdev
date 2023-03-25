@@ -15,8 +15,3 @@ message("!!! matlab_matrix_without_lib_common.pri CODENAME=$$CODENAME")
 INCLUDEPATH += $${PWD}/../../../include
 
 message($$MATLAB_VERSION " is used")
-
-QT -= gui
-QT -= core
-QT -= widgets
-CONFIG -= qt
