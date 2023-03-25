@@ -8,8 +8,6 @@
 
 MATLAB_VERSION = R2016b
 
-include ( $${PWD}/../../common/common_qt/sys_common.pri )
-
 message("!!! matlab_matrix_without_lib_common.pri CODENAME=$$CODENAME")
 
 INCLUDEPATH += $${PWD}/../../../include
