@@ -6,8 +6,8 @@
 # for PITZ
 #
 
-
-include($${PWD}/sys_common.pri)
+# todo: below file does not exist fix that
+# include($${PWD}/sys_common.pri)
 
 win32{
 
