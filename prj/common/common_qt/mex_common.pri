@@ -38,7 +38,8 @@ win32{
 
 message("!!!  CODENAME=$$CODENAME")
 
-DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
+#DESTDIR = $${PRJ_PWD}/$${SYSTEM_PATH}/mbin
+DESTDIR     = "$${artifactRoot}/sys/$${CODENAME}/$$CONFIGURATION/mbin"
 
 INCLUDEPATH += $${PWD}/../../../include
 
